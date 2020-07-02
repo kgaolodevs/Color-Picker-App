@@ -30,17 +30,23 @@ svg {
       height: 80vh;
       display: flex;
       flex-direction: column;
-      flex: 1;
       align-items: center;
-      justify-content: space-evenly;
+      justify-content: start;
       position: relative;
       overflow: hidden;
+      flex: 1;
 
       h2 {
-        font-size: 2rem;
+        justify-self: start;
         cursor: pointer;
+        padding: 3rem;
       }
     }
+    &--controls {
+      margin-top: 2rem;
+      transition: all 0.5s ease-in-out;
+    }
+
     &--sliders {
       display: flex;
       flex-direction: column;
@@ -52,9 +58,10 @@ svg {
       border-top-right-radius: 1rem;
       border-top-left-radius: 1rem;
       pointer-events: none;
+      opacity: 0;
 
       // Adjustment class (Dynamic)
-      // transform: translateY(100px);
+      transform: translateY(100px);
       transition: all 0.5s ease-in-out;
 
       button {
@@ -78,6 +85,14 @@ svg {
     &--controls {
       display: flex;
       flex-direction: column;
+    }
+    &--adjust,
+    &--lock {
+      font-size: 2rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      margin: 2rem 0rem;
     }
   }
 

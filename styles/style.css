@@ -38,22 +38,30 @@ svg {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   position: relative;
   overflow: hidden;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .app__colors--color h2 {
-  font-size: 2rem;
+  -ms-grid-column-align: start;
+      justify-self: start;
   cursor: pointer;
+  padding: 3rem;
+}
+
+.app__colors--controls {
+  margin-top: 2rem;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .app__colors--sliders {
@@ -72,6 +80,9 @@ svg {
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
   pointer-events: none;
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
@@ -104,6 +115,14 @@ svg {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.app__colors--adjust, .app__colors--lock {
+  font-size: 2rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin: 2rem 0rem;
 }
 
 .app__panel {
