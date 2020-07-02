@@ -21,7 +21,7 @@ svg {
 
 .app {
   &__colors {
-    min-height: 800vh;
+    min-height: 80vh;
     display: flex;
     color: #dadada;
 
@@ -34,6 +34,7 @@ svg {
       align-items: center;
       justify-content: space-evenly;
       position: relative;
+      overflow: hidden;
 
       h2 {
         font-size: 2rem;
@@ -45,9 +46,67 @@ svg {
       flex-direction: column;
       position: absolute;
       bottom: 0%;
-      background-color: rgb(49, 49, 49);
+      background-color: #25242a;
       padding: 1rem;
       width: 80%;
+      border-top-right-radius: 1rem;
+      border-top-left-radius: 1rem;
+      pointer-events: none;
+
+      // Adjustment class (Dynamic)
+      // transform: translateY(100px);
+      transition: all 0.5s ease-in-out;
+
+      button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0.3rem;
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+        border: none;
+        background: #121214;
+        color: white;
+        font-weight: bold;
+      }
+    }
+    .slidersActive {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+    &--controls {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__panel {
+    outline: 0.2rem crimson solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 20vh;
+
+    &--library,
+    &--generate,
+    &--save {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    button {
+      font-size: 1.2rem;
+      margin: 1rem;
+      padding: 1rem 2rem;
+      background: #313363;
+      border: none;
+      color: white;
+      border-radius: 1rem;
+    }
+    p {
+      font-size: 1.2rem;
     }
   }
 }
