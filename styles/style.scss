@@ -1,0 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #25242a;
+}
+
+button {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+path,
+i,
+svg {
+  pointer-events: none;
+}
+
+.app {
+  &__colors {
+    min-height: 800vh;
+    display: flex;
+    color: #dadada;
+
+    &--color {
+      outline: 0.1rem crimson solid;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      align-items: center;
+      justify-content: space-evenly;
+      position: relative;
+
+      h2 {
+        font-size: 2rem;
+        cursor: pointer;
+      }
+    }
+    &--sliders {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      bottom: 0%;
+      background-color: rgb(49, 49, 49);
+      padding: 1rem;
+      width: 80%;
+    }
+  }
+}
