@@ -29,7 +29,6 @@ svg {
 }
 
 .app__colors--color {
-  outline: 0.1rem crimson solid;
   height: 80vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -126,7 +125,6 @@ svg {
 }
 
 .app__panel {
-  outline: 0.2rem crimson solid;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -160,6 +158,10 @@ svg {
   border: none;
   color: white;
   border-radius: 1rem;
+}
+
+.app__panel button:hover {
+  cursor: pointer;
 }
 
 .app__panel p {
