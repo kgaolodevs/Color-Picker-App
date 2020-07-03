@@ -84,6 +84,9 @@ function hslControls(e) {
     .set("hsl.l", brightness.value);
 
   colorSections[index].style.backgroundColor = color;
+
+  // colorize inputs/sliders
+  colorizeSliders(color, hue, brightness, saturation);
 }
 
 function updateTextUI(index) {
