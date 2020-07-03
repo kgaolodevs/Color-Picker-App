@@ -222,12 +222,12 @@ svg {
   font-size: 3.5rem;
 }
 
-.app__copyContainer .copyContainerActive {
+.app .copyContainerActive {
   opacity: 1;
   pointer-events: all;
 }
 
-.app__copyContainer .copyPopupActive {
+.app .copyPopupActive {
   -webkit-transform: translateY(0rem);
           transform: translateY(0rem);
 }

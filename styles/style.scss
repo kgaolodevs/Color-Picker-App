@@ -169,14 +169,14 @@ svg {
         // padding: 1rem;
       }
     }
+  }
 
-    .copyContainerActive {
-      opacity: 1;
-      pointer-events: all;
-    }
+  .copyContainerActive {
+    opacity: 1;
+    pointer-events: all;
+  }
 
-    .copyPopupActive {
-      transform: translateY(0rem);
-    }
+  .copyPopupActive {
+    transform: translateY(0rem);
   }
 }
