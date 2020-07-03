@@ -4,6 +4,10 @@ const generateButton = document.querySelectorAll(".app__panel--generateButton");
 const sliders = document.querySelectorAll(`input[type="range"]`);
 const currentHexes = document.querySelectorAll(".app__colors--color h2");
 const popup = document.querySelector(".app__copyContainer");
+const adjustButtons = document.querySelectorAll(".app__colors--adjust");
+// prettier-ignore
+const closeAdjustmentsButtons = document.querySelectorAll(".app__colors--closeAdjustment");
+const sliderContainers = document.querySelectorAll(".app__colors--sliders");
 let initialColors;
 
 // Functions
@@ -138,6 +142,10 @@ function copyToClipboard(hex) {
   popupBox.classList.add("copyPopupActive");
 }
 
+function openAdjustmentPanel(index) {
+  sliderContainers[index].classList.toggle("slidersActive");
+}
+
 // Event listeners
 sliders.forEach((slider) => {
   slider.addEventListener("input", hslControls);
@@ -159,4 +167,10 @@ popup.addEventListener("transitionend", () => {
   const popupBox = popup.children[0];
   popup.classList.remove("copyContainerActive");
   popupBox.classList.remove("copyPopupActive");
+});
+
+adjustButtons.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    openAdjustmentPanel(index);
+  });
 });

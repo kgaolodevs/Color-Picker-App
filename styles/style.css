@@ -99,13 +99,6 @@ svg {
   font-weight: bold;
 }
 
-.app__colors .slidersActive {
-  opacity: 1;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-  pointer-events: all;
-}
-
 .app__colors--controls {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -226,6 +219,13 @@ svg {
 
 .app__copyContainer--popup h4 {
   font-size: 3.5rem;
+}
+
+.app .slidersActive {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  pointer-events: all;
 }
 
 .app .copyContainerActive {
