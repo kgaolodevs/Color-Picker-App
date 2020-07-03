@@ -57,11 +57,11 @@ svg {
       width: 80%;
       border-top-right-radius: 1rem;
       border-top-left-radius: 1rem;
-      pointer-events: none;
-      opacity: 0;
+      // pointer-events: none;
+      // opacity: 0;
 
       // Adjustment class (Dynamic)
-      transform: translateY(100px);
+      // transform: translateY(100px);
       transition: all 0.5s ease-in-out;
 
       button {
@@ -126,5 +126,15 @@ svg {
     p {
       font-size: 1.2rem;
     }
+  }
+
+  // Sliders
+  input[type="range"] {
+    -webkit-appearance: none;
+    margin: 1rem 0rem;
+    width: 100%;
+    position: relative;
+    border-radius: 1rem;
+    cursor: pointer;
   }
 }
