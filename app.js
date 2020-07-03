@@ -146,6 +146,10 @@ function openAdjustmentPanel(index) {
   sliderContainers[index].classList.toggle("slidersActive");
 }
 
+function closeAdjustmentPanel(index) {
+  sliderContainers[index].classList.remove("slidersActive");
+}
+
 // Event listeners
 sliders.forEach((slider) => {
   slider.addEventListener("input", hslControls);
@@ -172,5 +176,11 @@ popup.addEventListener("transitionend", () => {
 adjustButtons.forEach((button, index) => {
   button.addEventListener("click", () => {
     openAdjustmentPanel(index);
+  });
+});
+
+closeAdjustmentsButtons.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    closeAdjustmentPanel(index);
   });
 });

@@ -99,6 +99,10 @@ svg {
   font-weight: bold;
 }
 
+.app__colors--sliders button:hover {
+  cursor: pointer;
+}
+
 .app__colors--controls {
   display: -webkit-box;
   display: -ms-flexbox;

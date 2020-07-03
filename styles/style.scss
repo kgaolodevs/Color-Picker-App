@@ -75,6 +75,9 @@ svg {
         background: #121214;
         color: white;
         font-weight: bold;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
 
@@ -82,6 +85,7 @@ svg {
       display: flex;
       flex-direction: column;
     }
+
     &--adjust,
     &--lock {
       font-size: 2rem;
