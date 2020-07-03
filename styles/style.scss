@@ -148,6 +148,8 @@ svg {
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    pointer-events: none;
 
     &--popup {
       background: white;
@@ -166,6 +168,15 @@ svg {
         font-size: 3.5rem;
         // padding: 1rem;
       }
+    }
+
+    .copyContainerActive {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .copyPopupActive {
+      transform: translateY(0rem);
     }
   }
 }

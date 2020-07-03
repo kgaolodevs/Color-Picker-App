@@ -189,6 +189,8 @@ svg {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .app__copyContainer--popup {
@@ -218,5 +220,15 @@ svg {
 
 .app__copyContainer--popup h4 {
   font-size: 3.5rem;
+}
+
+.app__copyContainer .copyContainerActive {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.app__copyContainer .copyPopupActive {
+  -webkit-transform: translateY(0rem);
+          transform: translateY(0rem);
 }
 /*# sourceMappingURL=style.css.map */
