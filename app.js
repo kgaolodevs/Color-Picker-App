@@ -69,7 +69,6 @@ function hslControls(e) {
   const saturation = sliders[2];
 
   const bgColor = colorSections[index].querySelector("h2").innerText;
-  console.log(bgColor);
 
   let color = chroma(bgColor)
     .set("hsl.h", hue.value)
@@ -79,7 +78,25 @@ function hslControls(e) {
   colorSections[index].style.backgroundColor = color;
 }
 
+function updateTextUI(index) {
+  const activeSection = colorSections[index];
+  const color = chroma(activeSection.style.backgroundColor);
+  const textHex = activeSection.querySelector("h2");
+  const icons = activeSection.querySelectorAll(".app__colors--controls button");
+  textHex.innerText = color.hex();
+  checkTextContrast(color, textHex);
+  for (icon of icons) {
+    checkTextContrast(color, icon);
+  }
+}
+
 // Event listeners
 sliders.forEach((slider) => {
   slider.addEventListener("input", hslControls);
+});
+
+colorSections.forEach((section, index) => {
+  section.addEventListener("change", () => {
+    updateTextUI(index);
+  });
 });
