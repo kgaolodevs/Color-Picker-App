@@ -106,6 +106,18 @@ function resetInputs() {
       const hueValue = chroma(hueColor).hsl()[0];
       slider.value = Math.floor(hueValue);
     }
+    if (slider.name === "brightness") {
+      const brightnessColor =
+        initialColors[slider.getAttribute("data-brightness")];
+      const brightnessValue = chroma(brightnessColor).hsl()[2];
+      slider.value = Math.floor(brightnessValue * 100) / 100;
+    }
+    if (slider.name === "saturation") {
+      const saturationColor =
+        initialColors[slider.getAttribute("data-saturation")];
+      const saturationValue = chroma(saturationColor).hsl()[1];
+      slider.value = Math.floor(saturationValue * 100) / 100;
+    }
   });
 }
 
