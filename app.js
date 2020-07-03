@@ -1,7 +1,7 @@
 // Elements & Variables
 const colorSections = document.querySelectorAll(".app__colors--color");
 const generateButton = document.querySelectorAll(".app__panel--generateButton");
-const sliderInput = document.querySelectorAll(`input[type="range"]`);
+const sliders = document.querySelectorAll(`input[type="range"]`);
 const currentHexex = document.querySelectorAll(".app__colors--color h2");
 let initialColors;
 
@@ -31,6 +31,7 @@ function randomColors() {
     colorizeSliders(color, hue, brightness, saturation);
   });
 }
+randomColors();
 
 function colorizeSliders(color, hue, brightness, saturation) {
   // Saturation range (scale)
@@ -50,16 +51,35 @@ function colorizeSliders(color, hue, brightness, saturation) {
   hue.style.backgroundImage = `linear-gradient(to right, rgb(204,75,75), rgb(204,204,75), rgb(75,204,75), rgb(75,204,204), rgb(204,75,75), rgb(75,75,204), rgb(204,75,204), rgb(204,75,75))`;
 }
 
-randomColors();
-
 function checkTextContrast(color, text) {
   const luminance = chroma(color).luminance();
   luminance > 0.5 ? (text.style.color = "black") : (text.style.color = "white");
 }
 
+function hslControls(e) {
+  const index =
+    e.target.getAttribute("data-hue") ||
+    e.target.getAttribute("data-saturation") ||
+    e.target.getAttribute("data-brightness");
+
+  let sliders = e.target.parentElement.querySelectorAll(`input[type="range"]`);
+
+  const hue = sliders[0];
+  const brightness = sliders[1];
+  const saturation = sliders[2];
+
+  const bgColor = colorSections[index].querySelector("h2").innerText;
+  console.log(bgColor);
+
+  let color = chroma(bgColor)
+    .set("hsl.h", hue.value)
+    .set("hsl.s", saturation.value)
+    .set("hsl.l", brightness.value);
+
+  colorSections[index].style.backgroundColor = color;
+}
+
 // Event listeners
-document.querySelectorAll(".app__colors").forEach((color) => {
-  color.addEventListener("click", () => {
-    randomColors();
-  });
+sliders.forEach((slider) => {
+  slider.addEventListener("input", hslControls);
 });
