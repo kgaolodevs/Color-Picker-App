@@ -12,9 +12,15 @@ function generateHex() {
 }
 
 function randomColors() {
+  initialColors = [];
   colorSections.forEach((section, index) => {
     const hexText = section.children[0];
     const randomColor = generateHex();
+
+    // Add color to the colors array
+    initialColors.push(chroma(randomColor).hex());
+
+    // Add color to section background
     section.style.background = randomColor;
     hexText.textContent = randomColor;
 
@@ -30,6 +36,8 @@ function randomColors() {
 
     colorizeSliders(color, hue, brightness, saturation);
   });
+  // Reset inputs
+  resetInputs();
 }
 randomColors();
 
@@ -68,7 +76,7 @@ function hslControls(e) {
   const brightness = sliders[1];
   const saturation = sliders[2];
 
-  const bgColor = colorSections[index].querySelector("h2").innerText;
+  const bgColor = initialColors[index];
 
   let color = chroma(bgColor)
     .set("hsl.h", hue.value)
@@ -88,6 +96,17 @@ function updateTextUI(index) {
   for (icon of icons) {
     checkTextContrast(color, icon);
   }
+}
+
+function resetInputs() {
+  const sliders = document.querySelectorAll(".app__colors--sliders input");
+  sliders.forEach((slider) => {
+    if (slider.name === "hue") {
+      const hueColor = initialColors[slider.getAttribute("data-hue")];
+      const hueValue = chroma(hueColor).hsl()[0];
+      slider.value = Math.floor(hueValue);
+    }
+  });
 }
 
 // Event listeners
