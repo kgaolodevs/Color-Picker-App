@@ -165,10 +165,12 @@ function closeAdjustmentPanel(index) {
 function lockLayer(e, index) {
   const lockSVG = e.target.children[0];
   const activeBackground = colorSections[index];
-  activeBackground.classList.add("locked");
+  activeBackground.classList.toggle("locked");
 
-  if (lockSVG.classList.contains("fa-lock-open")) {
+  if (activeBackground.classList.contains("locked")) {
     lockSVG.innerHTML = `<i class="fas fa-lock"></i>`;
+  } else {
+    lockSVG.innerHTML = `<i class="fas fa-lock-open"></i>`;
   }
 }
 
