@@ -147,14 +147,14 @@ svg {
           align-items: center;
 }
 
-.app__panel--generate {
+.app__panel--library, .app__panel--generate, .app__panel--save {
   -webkit-transition: 0.2s all ease-in-out;
   transition: 0.2s all ease-in-out;
   border-radius: 1rem;
   padding: 1rem;
 }
 
-.app__panel--generate:hover {
+.app__panel--library:hover, .app__panel--generate:hover, .app__panel--save:hover {
   cursor: pointer;
   -webkit-transform: translateY(-0.2rem);
           transform: translateY(-0.2rem);
@@ -164,7 +164,7 @@ svg {
           box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
-.app__panel--generate:active {
+.app__panel--library:active, .app__panel--generate:active, .app__panel--save:active {
   -webkit-transform: translateY(0);
           transform: translateY(0);
   -webkit-transform: scale(1);
@@ -251,6 +251,11 @@ svg {
   font-size: 3.5rem;
 }
 
+.app .saveContainer--input {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
 .app .slidersActive {
   opacity: 1;
   -webkit-transform: translateY(0);
@@ -270,5 +275,11 @@ svg {
 .app .libraryPopupActive {
   -webkit-transform: translateY(0rem);
           transform: translateY(0rem);
+}
+
+.app .copyPopupActive h4,
+.app .savePopupActive h4,
+.app .libraryPopupActive h4 {
+  font-size: 1.4rem;
 }
 /*# sourceMappingURL=style.css.map */

@@ -111,7 +111,9 @@ svg {
       align-items: center;
     }
 
-    &--generate {
+    &--library,
+    &--generate,
+    &--save {
       transition: 0.2s all ease-in-out;
       border-radius: 1rem;
       padding: 1rem;
@@ -194,6 +196,13 @@ svg {
     }
   }
 
+  .saveContainer {
+    &--input {
+      font-size: 1.5rem;
+      padding: 1rem;
+    }
+  }
+
   .slidersActive {
     opacity: 1;
     transform: translateY(0);
@@ -211,6 +220,10 @@ svg {
   .savePopupActive,
   .libraryPopupActive {
     transform: translateY(0rem);
+
+    h4 {
+      font-size: 1.4rem;
+    }
   }
 
   .locked {

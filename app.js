@@ -188,6 +188,10 @@ function openPalette(e) {
   popup.classList.add("savePopupActive");
 }
 
+function closePalette() {
+  saveContainer.classList.remove("saveContainerActive");
+}
+
 // Event listeners
 sliders.forEach((slider) => {
   slider.addEventListener("input", hslControls);
@@ -232,3 +236,5 @@ lockButtons.forEach((button, index) => {
 });
 
 saveButton.addEventListener("click", openPalette);
+
+closeSave.addEventListener("click", closePalette);
