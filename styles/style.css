@@ -353,4 +353,41 @@ svg {
       -ms-flex: 1;
           flex: 1;
 }
+
+.app .small-preview div {
+  height: 5rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.app .pickPalette-button {
+  color: white;
+  background: #313363;
+  border: none;
+  padding: 1rem;
+  height: 5rem;
+  font-weight: bold;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.app .pickPalette-button:hover {
+  cursor: pointer;
+  -webkit-transform: translateY(-0.2rem);
+          transform: translateY(-0.2rem);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.app .pickPalette-button:active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
 /*# sourceMappingURL=style.css.map */

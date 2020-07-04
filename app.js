@@ -312,4 +312,5 @@ closeSave.addEventListener("click", closePalette);
 submitSave.addEventListener("click", savePalettes);
 
 libraryButton.addEventListener("click", openLibrary);
+
 closeLibraryButton.addEventListener("click", closeLibrary);
