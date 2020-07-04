@@ -1,6 +1,6 @@
 // Elements & Variables
 const colorSections = document.querySelectorAll(".app__colors--color");
-const generateButton = document.querySelectorAll(".app__panel--generateButton");
+const generateButton = document.querySelector(".app__panel--generateButton");
 const sliders = document.querySelectorAll(`input[type="range"]`);
 const currentHexes = document.querySelectorAll(".app__colors--color h2");
 const popup = document.querySelector(".app__copyContainer");
@@ -191,3 +191,5 @@ closeAdjustmentsButtons.forEach((button, index) => {
     closeAdjustmentPanel(index);
   });
 });
+
+generateButton.addEventListener("click", randomColors);
