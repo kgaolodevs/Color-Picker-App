@@ -22,10 +22,14 @@ function randomColors() {
   colorSections.forEach((section, index) => {
     const hexText = section.children[0];
     const randomColor = generateHex();
-
-    // Add color to the colors array
-    initialColors.push(chroma(randomColor).hex());
-    console.log(randomColor.hex());
+    // Add it to the array
+    if (section.classList.contains("locked")) {
+      initialColors.push(hexText.innerText);
+      return;
+    } else {
+      // Add color to the colors array
+      initialColors.push(chroma(randomColor).hex());
+    }
 
     // Add color to section background
     section.style.background = randomColor;
@@ -158,6 +162,16 @@ function closeAdjustmentPanel(index) {
   sliderContainers[index].classList.remove("slidersActive");
 }
 
+function lockLayer(e, index) {
+  const lockSVG = e.target.children[0];
+  const activeBackground = colorSections[index];
+  activeBackground.classList.add("locked");
+
+  if (lockSVG.classList.contains("fa-lock-open")) {
+    lockSVG.innerHTML = `<i class="fas fa-lock"></i>`;
+  }
+}
+
 // Event listeners
 sliders.forEach((slider) => {
   slider.addEventListener("input", hslControls);
@@ -194,3 +208,9 @@ closeAdjustmentsButtons.forEach((button, index) => {
 });
 
 generateButton.addEventListener("click", randomColors);
+
+lockButtons.forEach((button, index) => {
+  button.addEventListener("click", (e) => {
+    lockLayer(e, index);
+  });
+});
