@@ -199,7 +199,7 @@ function closePalette() {
 
 function savePalettes(e) {
   saveContainer.classList.remove("saveContainerActive");
-  saveContainerPopup.classList.remove("savePopupActive");
+  // saveContainerPopup.classList.remove("savePopupActive");
   const paletteName = saveInput.value;
   const colors = [];
   currentHexes.forEach((hex) => {
@@ -220,7 +220,7 @@ function savePalettes(e) {
   palette.classList.add("custom-palette");
   const title = document.createElement("h4");
   title.innerText = paletteObject.name;
-  const preview = document.createElement(div);
+  const preview = document.createElement("div");
   preview.classList.add("small-preview");
   paletteObject.colors.forEach((colorPreview) => {
     const colorDiv = document.createElement("div");

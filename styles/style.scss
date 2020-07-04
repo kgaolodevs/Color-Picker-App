@@ -255,6 +255,26 @@ svg {
     }
   }
 
-  .locked {
+  &__libraryContainer--popup {
+    min-width: 40%;
+    padding: 1rem;
+    justify-content: flex-start;
+    overflow-y: scroll;
+    max-height: 50vh;
+  }
+
+  .custom-palette {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 2rem;
+    h4 {
+      flex: 1;
+    }
+  }
+  .small-preview {
+    display: flex;
+    flex: 1;
   }
 }
