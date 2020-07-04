@@ -25,6 +25,7 @@ function randomColors() {
 
     // Add color to the colors array
     initialColors.push(chroma(randomColor).hex());
+    console.log(randomColor.hex());
 
     // Add color to section background
     section.style.background = randomColor;

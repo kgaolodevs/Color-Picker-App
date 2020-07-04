@@ -150,9 +150,12 @@ svg {
 .app__panel--generate {
   -webkit-transition: 0.2s all ease-in-out;
   transition: 0.2s all ease-in-out;
+  border-radius: 1rem;
+  padding: 1rem;
 }
 
 .app__panel--generate:hover {
+  cursor: pointer;
   -webkit-transform: translateY(-0.2rem);
           transform: translateY(-0.2rem);
   -webkit-transform: scale(1.05);

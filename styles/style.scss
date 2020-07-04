@@ -113,7 +113,10 @@ svg {
 
     &--generate {
       transition: 0.2s all ease-in-out;
+      border-radius: 1rem;
+      padding: 1rem;
       &:hover {
+        cursor: pointer;
         transform: translateY(-0.2rem);
         transform: scale(1.05);
         box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -202,5 +205,8 @@ svg {
 
   .copyPopupActive {
     transform: translateY(0rem);
+  }
+
+  .locked {
   }
 }
