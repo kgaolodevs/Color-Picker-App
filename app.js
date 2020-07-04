@@ -210,6 +210,12 @@ function savePalettes(e) {
   // Save palettes to local storage
   saveToLocal(paletteObject);
   saveInput.value = "";
+
+  // Generate the palette for library
+  const palette = document.createElement("div");
+  palette.classList.add("custom-palette");
+  const title = document.createElement("h4");
+  title.innerText = paletteObject.name;
 }
 
 function saveToLocal(paletteObject) {
