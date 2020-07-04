@@ -8,6 +8,7 @@ const adjustButtons = document.querySelectorAll(".app__colors--adjust");
 const lockButtons = document.querySelectorAll(".app__colors--lock");
 const saveButton = document.querySelector(".app__panel--saveButton");
 const saveContainer = document.querySelector(".app__saveContainer");
+const saveContainerPopup = document.querySelector(".app__saveContainer--popup");
 const saveInput = document.querySelector(".saveContainer--input");
 const submitSave = document.querySelector(".saveContainer--submitBtn");
 const closeSave = document.querySelector(".saveContainer--closeBtn");
@@ -192,6 +193,36 @@ function closePalette() {
   saveContainer.classList.remove("saveContainerActive");
 }
 
+function savePalettes(e) {
+  saveContainer.classList.remove("saveContainerActive");
+  saveContainerPopup.classList.remove("savePopupActive");
+  const paletteName = saveInput.value;
+  const colors = [];
+  currentHexes.forEach((hex) => {
+    colors.push(hex.innerText);
+  });
+
+  // Create the palette object
+  let paletteNumber = savedPalettes.length;
+  const paletteObject = { name: paletteName, colors, no: paletteNumber };
+  savedPalettes.push(paletteObject);
+
+  // Save palettes to local storage
+  saveToLocal(paletteObject);
+  saveInput.value = "";
+}
+
+function saveToLocal(paletteObject) {
+  let localPalettes;
+  if (localStorage.getItem("palettes") === null) {
+    localPalettes = [];
+  } else {
+    localPalettes = JSON.parse(localStorage.getItem("palettes"));
+  }
+  localPalettes.push(paletteObject);
+  localStorage.setItem("palettes", JSON.stringify(localPalettes));
+}
+
 // Event listeners
 sliders.forEach((slider) => {
   slider.addEventListener("input", hslControls);
@@ -227,14 +258,16 @@ closeAdjustmentsButtons.forEach((button, index) => {
   });
 });
 
-generateButton.addEventListener("click", randomColors);
-
 lockButtons.forEach((button, index) => {
   button.addEventListener("click", (e) => {
     lockLayer(e, index);
   });
 });
 
+generateButton.addEventListener("click", randomColors);
+
 saveButton.addEventListener("click", openPalette);
 
 closeSave.addEventListener("click", closePalette);
+
+submitSave.addEventListener("click", savePalettes);
