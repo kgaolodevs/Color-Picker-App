@@ -5,6 +5,7 @@ const sliders = document.querySelectorAll(`input[type="range"]`);
 const currentHexes = document.querySelectorAll(".app__colors--color h2");
 const popup = document.querySelector(".app__copyContainer");
 const adjustButtons = document.querySelectorAll(".app__colors--adjust");
+const lockButtons = document.querySelectorAll(".app__colors--lock");
 // prettier-ignore
 const closeAdjustmentsButtons = document.querySelectorAll(".app__colors--closeAdjustment");
 const sliderContainers = document.querySelectorAll(".app__colors--sliders");
@@ -43,6 +44,12 @@ function randomColors() {
   });
   // Reset inputs
   resetInputs();
+
+  // Check button contrast
+  adjustButtons.forEach((button, index) => {
+    checkTextContrast(initialColors[index], button);
+    checkTextContrast(initialColors[index], lockButtons[index]);
+  });
 }
 randomColors();
 
