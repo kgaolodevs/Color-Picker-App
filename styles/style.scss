@@ -201,6 +201,35 @@ svg {
       font-size: 1.5rem;
       padding: 1rem;
     }
+
+    &--submitBtn {
+      color: white;
+      background: #313363;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 0.5rem;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .saveContainer--closeBtn,
+  .libraryContainer--closeBtn {
+    color: white;
+    background: #313363;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.9rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .slidersActive {

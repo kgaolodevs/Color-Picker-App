@@ -256,6 +256,38 @@ svg {
   padding: 1rem;
 }
 
+.app .saveContainer--submitBtn {
+  color: white;
+  background: #313363;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.app .saveContainer--submitBtn:hover {
+  cursor: pointer;
+}
+
+.app .saveContainer--closeBtn,
+.app .libraryContainer--closeBtn {
+  color: white;
+  background: #313363;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0.9rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+
+.app .saveContainer--closeBtn:hover,
+.app .libraryContainer--closeBtn:hover {
+  cursor: pointer;
+}
+
 .app .slidersActive {
   opacity: 1;
   -webkit-transform: translateY(0);
