@@ -158,7 +158,9 @@ svg {
     cursor: pointer;
   }
 
-  &__copyContainer {
+  &__copyContainer,
+  &__saveContainer,
+  &__libraryContainer {
     position: fixed;
     top: 0;
     left: 0;
@@ -198,12 +200,16 @@ svg {
     pointer-events: all;
   }
 
-  .copyContainerActive {
+  .copyContainerActive,
+  .saveContainerActive,
+  .libraryContainerActive {
     opacity: 1;
     pointer-events: all;
   }
 
-  .copyPopupActive {
+  .copyPopupActive,
+  .savePopupActive,
+  .libraryPopupActive {
     transform: translateY(0rem);
   }
 

@@ -200,7 +200,7 @@ svg {
   cursor: pointer;
 }
 
-.app__copyContainer {
+.app__copyContainer, .app__saveContainer, .app__libraryContainer {
   position: fixed;
   top: 0;
   left: 0;
@@ -222,7 +222,7 @@ svg {
   transition: all 0.5s ease-in-out;
 }
 
-.app__copyContainer--popup {
+.app__copyContainer--popup, .app__saveContainer--popup, .app__libraryContainer--popup {
   background: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -247,7 +247,7 @@ svg {
   padding: 1rem 2rem;
 }
 
-.app__copyContainer--popup h4 {
+.app__copyContainer--popup h4, .app__saveContainer--popup h4, .app__libraryContainer--popup h4 {
   font-size: 3.5rem;
 }
 
@@ -258,12 +258,16 @@ svg {
   pointer-events: all;
 }
 
-.app .copyContainerActive {
+.app .copyContainerActive,
+.app .saveContainerActive,
+.app .libraryContainerActive {
   opacity: 1;
   pointer-events: all;
 }
 
-.app .copyPopupActive {
+.app .copyPopupActive,
+.app .savePopupActive,
+.app .libraryPopupActive {
   -webkit-transform: translateY(0rem);
           transform: translateY(0rem);
 }

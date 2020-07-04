@@ -6,10 +6,18 @@ const currentHexes = document.querySelectorAll(".app__colors--color h2");
 const popup = document.querySelector(".app__copyContainer");
 const adjustButtons = document.querySelectorAll(".app__colors--adjust");
 const lockButtons = document.querySelectorAll(".app__colors--lock");
+const saveButton = document.querySelector(".app__panel--saveButton");
+const saveContainer = document.querySelector(".app__saveContainer");
+const saveInput = document.querySelector(".saveContainer--input");
+const submitSave = document.querySelector(".saveContainer--submitBtn");
+const closeSave = document.querySelector(".saveContainer--closeBtn");
 // prettier-ignore
 const closeAdjustmentsButtons = document.querySelectorAll(".app__colors--closeAdjustment");
 const sliderContainers = document.querySelectorAll(".app__colors--sliders");
 let initialColors;
+
+// For local storage
+let savedPalettes = [];
 
 // Functions
 function generateHex() {
@@ -174,6 +182,12 @@ function lockLayer(e, index) {
   }
 }
 
+function openPalette(e) {
+  const popup = saveContainer.children[0];
+  saveContainer.classList.add("saveContainerActive");
+  popup.classList.add("savePopupActive");
+}
+
 // Event listeners
 sliders.forEach((slider) => {
   slider.addEventListener("input", hslControls);
@@ -216,3 +230,5 @@ lockButtons.forEach((button, index) => {
     lockLayer(e, index);
   });
 });
+
+saveButton.addEventListener("click", openPalette);
