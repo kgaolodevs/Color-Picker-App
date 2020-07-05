@@ -244,6 +244,7 @@ function savePalettes(e) {
       checkTextContrast(color, text);
       updateTextUI(index);
     });
+    resetInputs();
   });
 
   // Append to the library
@@ -316,6 +317,55 @@ function closeLibrary() {
   libraryContainer.classList.remove("libraryContainerActive");
   popup.classList.add("libraryPopupActive");
 }
+
+function getLocal() {
+  if (localStorage.getItem("palettes") === null) {
+    localStorage = [];
+  } else {
+    const paletteObjects = JSON.parse(localStorage.getItem("palettes"));
+    paletteObjects.forEach((paletteObject) => {
+      // Generate the palette for library
+      const palette = document.createElement("div");
+      palette.classList.add("custom-palette");
+      const title = document.createElement("h4");
+      title.innerText = paletteObject.name;
+      const preview = document.createElement("div");
+      preview.classList.add("small-preview");
+      paletteObject.colors.forEach((colorPreview) => {
+        const colorDiv = document.createElement("div");
+        colorDiv.style.background = colorPreview;
+        preview.appendChild(colorDiv);
+      });
+      const paletteButton = document.createElement("button");
+      paletteButton.classList.add("pickPalette-button");
+      paletteButton.classList.add(paletteObject.no);
+      paletteButton.innerText = "Select";
+
+      // Attach event to the button
+      paletteButton.addEventListener("click", (e) => {
+        closeLibrary();
+        const paletteIndex = e.target.classList[1];
+        initialColors = [];
+        paletteObjects[paletteIndex].colors.forEach((color, index) => {
+          initialColors.push(color);
+          colorSections[index].style.background = color;
+          const text = colorSections[index].children[0];
+          checkTextContrast(color, text);
+          updateTextUI(index);
+        });
+        resetInputs();
+      });
+
+      // Append to the library
+      palette.appendChild(title);
+      palette.appendChild(preview);
+      palette.appendChild(paletteButton);
+      libraryContainer.children[0].appendChild(palette);
+    });
+  }
+}
+
+getLocal();
 
 generateButton.addEventListener("click", randomColors);
 
